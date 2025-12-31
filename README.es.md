@@ -1,5 +1,7 @@
 # Reloj de Pared Cinético
 
+[English version](README.md)
+
 Proyecto IoT que implementa un reloj analógico construido a partir de múltiples relojes individuales.
 
 Inicialmente consta de 24 relojes organizados en una matriz de 3 filas y 8 columnas.

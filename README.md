@@ -1,5 +1,7 @@
 # Kinetic Wall Clock
 
+[Versión en español](README.es.md) 
+
 An IoT project that implements an analog clock constructed from multiple individual clocks.
 
 Initially comprised of 24 clocks organized in a matrix of 3 rows and 8 columns.
