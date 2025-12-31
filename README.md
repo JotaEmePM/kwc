@@ -1,41 +1,41 @@
 # Kinetic Wall Clock
 
-Es un proyecto IOT el cual es un reloj hecho de relojes.
+An IoT project that implements an analog clock constructed from multiple individual clocks.
 
-Inicialmente es un proyecto con 24 relojes (3 filas, 8 columnas)
+Initially comprised of 24 clocks organized in a matrix of 3 rows and 8 columns.
 
-El proyecto consta principalmente de dos componentes, una Raspberry PI (master) que se encargara de calcular segun el esquema en que se encuentre, que posicion debe tomar cada reloj y enviar estos comandos a cada uno de los ESP32 (slave) que ejecutaran los movimientos. El master definira la posicion que debe ir cada manecilla y la velocidad de su movimiento.
+The project consists of two main components: a Raspberry Pi (master) responsible for calculating, according to the active visualization scheme, the position each hand should adopt and sending the corresponding commands to each ESP32 (slave) to execute the movements. The master determines both the target position and movement speed of each hand.
 
-## Componentes principales
+## Main Components
 
 ### Master
 
-- Rasperry PI 4B -> Es el cerebro, encargado de administrar los estados del reloj, calcular animaciones, enviar los comandos a los slaves.
+- Raspberry Pi 4B → Acts as the system's brain, responsible for managing clock states, calculating animations, and sending commands to the slaves.
 
-- RS485 -> Comunicacion serial por protocolo RS485, es un estandar de comunicacion muy utilizado en aplicaciones y control de datos. Su principal ventaja es que permite incluir varios dispositivos RS485 en el mismo BUS, lo que hace posible que varios nodos se conecten entre si. Es utilizado por KWC para enviar los comandos principales.
+- RS485 → Serial communication via RS485 protocol, a standard widely used in automation and data control applications. Its main advantage lies in allowing multiple RS485 devices to be connected on the same bus, facilitating communication between multiple nodes. KWC uses this protocol for transmitting main commands.
 
 ### Slave
 
-- ESP32 -> Es el encargado de recibir comandos y controlar los principales componentes de cada reloj, en lo fisico el slave tiene el control de 4 motores paso a paso, 4 sensores hall, un DIP Switch para cambiar el reloj que debe controlar.
+- ESP32 → Responsible for receiving commands and controlling the main components of each clock. At the physical level, each slave manages 4 stepper motors, 4 Hall sensors, and a DIP switch to select the clock it should control.
 
-## Aspectos Tecnicos
+## Technical Aspects
 
-El reloj tiene la capacidad de determinar la posicion de cada manecilla mediante un sensor hall, ubicado en el punto 12 de un reloj para reiniciar en caso de cualquier incidente, por ejemplo un apagado, encendido, o una nueva accion solicitada.
+The clock has the ability to determine the position of each hand using a Hall sensor located at the 12 o'clock position, which allows resetting its position in case of any incident, such as power failures or unexpected actions.
 
-### Comandos basicos
+### Basic Commands
 
-- HOME[I][R][M][S] -> Comando que solicita a cada reloj que ubique una manecilla en la posicion cero. 
-    Donde: 
-        [I]: Slave a que se le comunica, van desde el 0 al 11.
-        [R]: Reloj, cada slave controla dos relojes, 0 y 1.
-        [M]: Manecilla, cada reloj controla dos manecillas, 0 y 1.
-        [S]: Velocidad de movimiento. <!-- TODO: Pendiente de valores maximos y minimos. -1 velocidad por defecto. -->
-- HOME_ALL: Ejecuta el programa de Home por defecto, este aplica para todos los slaves.
-- MOVE[I][R][M][A][S] -> Comando que solicita el movimiento del los punteros a un radio especifico con una velocidad especifica.
-    Donde: 
-        [I]: Slave a que se le comunica, van desde el 0 al 11.
-        [R]: Reloj, cada slave controla dos relojes, 0 y 1.
-        [M]: Manecilla, cada reloj controla dos manecillas, 0 y 1.
-        [A]: Angulo de destino.
-        [S]: Velocidad de movimiento. <!-- TODO: Pendiente de valores maximos y minimos. -1 velocidad por defecto. -->
+- HOME(I,R,M,S) → Command that requests positioning a hand at the zero position. 
+    Where: 
+        I: Slave identifier, range from 0 to 11.
+        R: Clock identifier, each slave controls two clocks: 0 and 1.
+        M: Hand identifier, each clock controls two hands: 0 and 1.
+        S: Movement speed. <!-- TODO: Pending definition of maximum and minimum values. -1 for default speed. -->
+- HOME_ALL: Executes the default initialization program applicable to all slaves.
+- MOVE(I,R,M,A,S) → Command that requests moving the hands to a specific angle at a determined speed.
+    Where: 
+        I: Slave identifier, range from 0 to 11.
+        R: Clock identifier, each slave controls two clocks: 0 and 1.
+        M: Hand identifier, each clock controls two hands: 0 and 1.
+        A: Destination angle.
+        S: Movement speed. <!-- TODO: Pending definition of maximum and minimum values. -1 for default speed. -->
 
