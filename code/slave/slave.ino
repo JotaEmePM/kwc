@@ -7,11 +7,13 @@
 #define LED 2
 
 void setup() {
-    pinMode(LET, OUTPUT);
+    //pinMode(LED, OUTPUT);
 }
 
 void loop() {
-    delay(50);
-
+    // digitalWrite(LED, HIGH);
+    // delay(500);
+    // digitalWrite(LED, LOW);
+    // delay(500);
 
 }
