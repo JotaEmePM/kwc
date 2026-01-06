@@ -1,0 +1,1 @@
+https://es.38-3d.co.uk/blogs/blog-38-3d/usando-el-modulo-rs485-max485-con-la-raspberry-pi
