@@ -1,0 +1,12 @@
+# Animacion basica de Home!
+header:
+  - name: HOME
+
+animation:
+  
+  - seq: 
+    - id: 0
+    - data: [ 'Hs0c0ch0p0sp100dl','Hs0c0ch1p0sp100dl','Hs0c1ch0p0sp100dl','Hs0c1ch1p0sp100dl',
+            'Hs1c0ch0p0sp100dl','Hs1c0ch1p0sp100dl','Hs0c1ch0p0sp100dl','Hs0c1ch1p0sp100dl',
+            'Hs2c0ch0p0sp100dl','Hs2c0ch1p0sp100dl','Hs2c1ch0p0sp100dl','Hs2c1ch1p0sp100dl',
+            'Hs3c0ch0p0sp100dl','Hs3c0ch1p0sp100dl','Hs3c1ch0p0sp100dl','Hs3c1ch1p0sp100dl']
