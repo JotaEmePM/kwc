@@ -1718,24 +1718,32 @@
     ]
   },
   "packageFolders": {
-    "/Users/jotaemepm/.nuget/packages/": {}
+    "C:\\Users\\jmper10\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jotaemepm/dev/kwc/code/master-console/master-console.csproj",
+      "projectUniqueName": "C:\\dev-personal\\kwc\\code\\master-console\\master-console.csproj",
       "projectName": "master-console",
-      "projectPath": "/Users/jotaemepm/dev/kwc/code/master-console/master-console.csproj",
-      "packagesPath": "/Users/jotaemepm/.nuget/packages/",
-      "outputPath": "/Users/jotaemepm/dev/kwc/code/master-console/obj/",
+      "projectPath": "C:\\dev-personal\\kwc\\code\\master-console\\master-console.csproj",
+      "packagesPath": "C:\\Users\\jmper10\\.nuget\\packages\\",
+      "outputPath": "C:\\dev-personal\\kwc\\code\\master-console\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/jotaemepm/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\jmper10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1781,7 +1789,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
